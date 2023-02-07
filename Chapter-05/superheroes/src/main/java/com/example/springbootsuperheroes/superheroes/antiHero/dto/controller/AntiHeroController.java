@@ -68,10 +68,12 @@ public class AntiHeroController {
         service.updateAntiHero(id, antiHeroEntity);
     }
 
+    //Mappings for out CRUD methods... mapper and service injected above
+//Converts the entity to a dto
     private AntiHeroDto convertToDto(AntiHeroEntity entity) {
         return mapper.map(entity, AntiHeroDto.class);
     }
-
+//Converts the dto to an entity
     private AntiHeroEntity convertToEntity(AntiHeroDto dto) {
         return mapper.map(dto, AntiHeroEntity.class);
     }

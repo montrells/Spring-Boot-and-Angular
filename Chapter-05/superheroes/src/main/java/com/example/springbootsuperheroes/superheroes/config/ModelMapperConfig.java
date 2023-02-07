@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 public class ModelMapperConfig {
 
     @Bean
+    //This bean will return a new instance of ModelMapper.
     public ModelMapper modelMapper() {
         return new ModelMapper();
     }

@@ -17,8 +17,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AntiHeroEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "UUID")
+    @Id //primarykey
+    @GeneratedValue(strategy = GenerationType.AUTO, generator = "UUID") //primarykey can be generated here or on the database directly  -The repository interface also uses the primary key
     @Column(nullable = false, updatable = false)
     private UUID id;
 
