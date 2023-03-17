@@ -19,7 +19,7 @@ import java.util.stream.StreamSupport;
 @RestController
 @RequestMapping("api/v1/anti-heroes")
 public class AntiHeroController {
-    private final AntiHeroService service;
+    private final AntiHeroService service;  //This is where all the CRUD lodgic is located
     private final ModelMapper mapper;
 
     @GetMapping
@@ -48,8 +48,8 @@ public class AntiHeroController {
 
     @PostMapping
     public AntiHeroDto postAntiHero(@Valid @RequestBody AntiHeroDto antiHeroDto) {
-        var entity = convertToEntity(antiHeroDto);
-        var antiHero = service.addAntiHero(entity);
+        var entity = convertToEntity(antiHeroDto);//converts and object into an entity
+        var antiHero = service.addAntiHero(entity);//method to insert the converted entity into the database.
 
         return convertToDto(antiHero);
     }
